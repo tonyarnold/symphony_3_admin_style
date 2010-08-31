@@ -1,17 +1,17 @@
 <?php
 
-	Class extension_Symphony_3_Admin_Style extends Extension {
+	Class Extension_Symphony_3_Admin_Style extends Extension {
 	
 		/**
 		 * Extension information
 		 */
 		 
 		public function about() {
-			return (object)array(
+			return array(
 				'name' => 'Symphony 3 Admin Style',
 				'version' => '1.0',
 				'release-date' => '2010-08-31',
-				'author' => (object)array(
+				'author' => array(
 					'name' => 'Tony Arnold',
 					'website' => 'http://thecocoabots.com',
 					'email' => 'tony@thecocoabots.com'
@@ -28,7 +28,7 @@
 			return array(
 				array('page'			=>	'/backend/',
 							'delegate'	=>	'InitaliseAdminPageHead',
-							'callback'	=>	'initaliseAdminPageHead'),
+							'callback'	=>	'initaliseAdminPageHead')
 			);
 		}
 	
@@ -37,14 +37,10 @@
 		 */
 		 
 	
-		public function initaliseAdminPageHead($context) {				
-			if($context['field']->{'text-formatter'} != 'formatter.ckeditor') return;
-			
+		public function initaliseAdminPageHead($context) {			
 		  $page = Administration::instance()->Page;
-			$page->addStylesheetToHead(URL . '/extensions/symphony-3-admin-style/assets/admin.css', 'screen', 40);
+			$page->addStylesheetToHead(URL . '/extensions/symphony_3_admin_style/assets/admin.css', 'screen', 40);
 		}
 				
 	}
-	
-	return "extension_Symphony_3_Admin_Style";
-	
+		
